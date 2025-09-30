@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://6igbhc5go7ni"]
+
+[ext_resource type="Texture2D" uid="uid://dc3i7w5yd2xbm" path="res://assets/textures/PNG/Green/texture_09.png" id="1_jcoxn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcoxn"]
+albedo_texture = ExtResource("1_jcoxn")
+uv1_triplanar = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_hqijj"]
+material = SubResource("StandardMaterial3D_jcoxn")
+left_to_right = 0.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rb8yn"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="slope" type="Node3D"]
+
+[node name="slope" type="MeshInstance3D" parent="."]
+mesh = SubResource("PrismMesh_hqijj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="slope"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="slope/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rb8yn")

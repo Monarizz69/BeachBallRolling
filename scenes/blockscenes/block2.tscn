@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds74rr7m1igbp"]
+
+[ext_resource type="Texture2D" uid="uid://c8jdgfw7w1vhv" path="res://assets/textures/PNG/Orange/texture_09.png" id="1_hp2of"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgrg5"]
+albedo_texture = ExtResource("1_hp2of")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4kun4"]
+material = SubResource("StandardMaterial3D_cgrg5")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ojgcc"]
+
+[node name="Block2" type="Node3D"]
+
+[node name="Block2" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_4kun4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Block2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block2/StaticBody3D"]
+shape = SubResource("BoxShape3D_ojgcc")

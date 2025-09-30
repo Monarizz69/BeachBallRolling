@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckp70tgy5uqfl"]
+
+[ext_resource type="PackedScene" uid="uid://ckuglbi3x3kqi" path="res://scenes/blockscenes/block.tscn" id="1_6prxj"]
+[ext_resource type="PackedScene" uid="uid://ds74rr7m1igbp" path="res://scenes/blockscenes/block2.tscn" id="2_6prxj"]
+[ext_resource type="PackedScene" uid="uid://gfgo1ocstgiw" path="res://scenes/blockscenes/bridge.tscn" id="2_kkyq0"]
+[ext_resource type="PackedScene" uid="uid://cpwu38nkvy53c" path="res://scenes/blockscenes/block3.tscn" id="3_kkyq0"]
+[ext_resource type="PackedScene" uid="uid://6igbhc5go7ni" path="res://scenes/blockscenes/slope.tscn" id="5_ck42y"]
+
+[node name="Blockset" type="Node3D"]
+
+[node name="Block" parent="." instance=ExtResource("1_6prxj")]
+visible = false
+
+[node name="Block2" parent="." instance=ExtResource("2_6prxj")]
+visible = false
+
+[node name="Block3" parent="." instance=ExtResource("3_kkyq0")]
+visible = false
+
+[node name="Bridge" parent="." instance=ExtResource("2_kkyq0")]
+visible = false
+
+[node name="Slope" parent="." instance=ExtResource("5_ck42y")]
+visible = false

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://by33304vqhwsb"]
+
+[ext_resource type="Script" uid="uid://cio32eg28qjy1" path="res://scripts/checkpoint.gd" id="1_yyywg"]
+[ext_resource type="PackedScene" uid="uid://dcmsjiadisdvr" path="res://assets/flag.glb" id="2_ywqth"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_njsvn"]
+size = Vector3(2, 1, 2)
+
+[node name="Checkpoint" type="Area3D"]
+script = ExtResource("1_yyywg")
+
+[node name="flag2" parent="." instance=ExtResource("2_ywqth")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_njsvn")
+debug_color = Color(0.81564003, 0.38327032, 1.92523e-07, 1)
+
+[node name="Spawnpoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81026554, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
